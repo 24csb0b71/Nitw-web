@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NITW HomePage</title>  
+    <style>
+        .top-box{
+            background-color: rgb(35, 65, 135);
+            height: 50px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .marquee-1{
+            width: 100%;
+            border: 3px solid rgb(35, 65, 135);
+            height: 50px;
+            border-left: none;
+            border-right: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 35px;
+            font-weight: bold;
+            padding: 5px;
+            color: red;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 1300px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .slides {
+            display: flex;
+            transition: transform ease-in 0.6s;
+        }
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { 
+            left: 10px; 
+        }
+        .next { right: 10px; }
+
+        .text{
+            color: rgb(35, 65, 135);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 35px;
+            font-weight: bold;
+            margin-left: 600px;
+            max-width: 600px;
+            display: flex;
+        }
+        .text-2{
+            color: rgb(146, 2, 2);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 35px;
+            font-weight: bold;
+            display: flex;
+            margin-left: 700px;
+            font-size: 40px;
+        }
+        
+        .image{
+            display: flex;
+            max-height: 400px;
+            gap: 20px;
+            height:400px;
+        }
+        .image-place{
+            display: flex;
+            width: 100%;
+        }
+        .wah{
+            display: flex;
+            gap : 69px;
+            margin-left: 150px;
+        }
+        .box{
+            border: 4px solid rgb(77, 145, 129);
+            background-color: rgb(77, 145, 129);
+            height: 500px;
+        }
+        .circle{
+            border: 9px solid rgb(0, 5, 4);
+            box-shadow: 3px 3px 3px rgb(201, 10, 10);
+            background-color: none;
+            border-radius: 200px;
+            height: 200px;
+            width: 200px;
+            margin-top: 100px;
+            text-align: center;
+            gap: 0px;
+        }
+        .circle-text{
+            margin-top: 70px; 
+            font-size: 30px; 
+            font-weight: bold; 
+            text-shadow: 2px 2px black;
+            color: rgb(214, 220, 19);
+            gap: 0px;
+
+        }
+        .icons{
+            height: 120px;
+            width: 220px;
+        }
+        .icons:hover{
+            opacity: 0.4;
+            box-shadow: 5px 5px black;
+            height: 120px;
+            width: 220px;
+        }
+        .box3{
+            width: 100%;
+            height: 430px;
+            background-color: rgb(17, 62, 17);
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .box3-text{
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-break: auto;
+            font-size: 23px;
+            margin-left: 30px;
+            line-break: auto;
+        }
+        .box3-text1{
+            color: rgb(255, 255, 255);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 23px;
+            line-break: auto;
+        }
+        .box3-text1:hover{
+            color: rgb(68, 202, 239);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 23px;
+            line-break: auto;
+            cursor: pointer;
+            margin-left: 5px;
+            
+        }
+        .map{
+            margin-top: 20px;
+            height: 300px;
+            width: 600px;
+            margin-left: 800px;
+            line-break: auto;
+        }
+        footer{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            height: 80px;
+            color: white;
+            background-color: rgb(35, 65, 135);;
+            border: 2px solid rgb(35, 65, 135);;
+        }
+        .navbar {
+            background-color: rgb(35, 65, 135);
+            padding: 15px;
+            left: 30%;
+            color: rgb(171, 0, 0);
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .dropdown {
+            display: none;
+            position: absolute;
+            margin-top: 100px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            left: 90%;
+            transform: translateX(-50%);
+            text-align: left;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 10;
+        }
+        
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+        
+        .dropdown a:hover {
+            background-color: rgb(220, 220, 220);
+        }
+    </style>
+</head>
+<body style="background-color: rgb(243, 248, 248);">
+    <header class="top-box">
+        <b>WELCOME TO NIT WARANGAL</b>
+        <div class="navbar" onclick="toggleDropdown()">☰ Nit Sites</div>
+        <div class="dropdown" id="dropdown">
+        <a href="https://erp.nitw.ac.in/erp/login">Smile ERP</a>
+        <a href="https://www.nitw.ac.in/page/?url=/contact-us">Contact Us</a>
+        <a href="https://www.nitw.ac.in/page/?url=/EMERGENCY/ECN/">Emergency</a>
+    </div>
+    
+    <script>
+        function toggleDropdown() {
+            let dropdown = document.getElementById("dropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+        document.addEventListener("click", function(event) {
+            let navbar = document.querySelector(".navbar");
+            let dropdown = document.getElementById("dropdown");
+            if (!navbar.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = "none";
+            }
+        });
+    </script>
+    </header><br>
+    <center><img src="nitw.png" alt="NITW Logo"></center>
+    
+    <br><br>
+    <div class="slider">
+        <div class="slides">
+            <img src="image1.jpg" alt="Slide 1">
+            <img src="image2.jpg" alt="Slide 2">
+            <img src="image 3.jpg" alt="Slide 3">
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slides img').length;
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = totalSlides - 1;
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+        }
+    </script>
+    <br><br>
+    <marquee direction="left" class="marquee-1">
+        Notice - Mid Semester Exams are CANCELLED!!      Date- 26/01/2025
+    </marquee><br><br><br>
+    <p class="text"> Director's Message</p><br><br>
+    <div class = "wah">
+        
+        <img src="director.jpg" class="image">
+        <p style="font-size: 30px; line-break: auto; margin-right: 100px;">
+            <br><br>
+        I am glad that I have been given an opportunity to 
+        serve as the Director of National Institute of Technology (NIT) Warangal-the oldest one in the bracket of first 17 NITs. 
+        It is an honour and privilege for me to lead this prestigious institute which has a rich history of its distinction in teaching, research and service to the nation. 
+        It is the first regional engineering college whose foundation stone has been laid by the former prime minister, Pandit Jawaharlal Nehru in the year 1959. 
+        Over a period of more than six decades, NIT Warangal has emerged as one of the leading institutions in engineering and technology.
+        </p>
+    </div>
+    <br> <br><br>
+    <img src="placement.png" class="image-place">
+    <div class="box"><br>
+        <p class="text-2"><u>OUR NUMBERS: </u></p>
+        <div class="circle" style="margin-left: 200px;">
+            <p class="circle-text">
+                Publication
+                9820+
+            </p>
+            <div class="circle" style="margin-left: 550px; margin-top: -146px;">
+                <p class="circle-text">
+                    Patents Filed
+                    125+
+                </p>
+            </div>
+            <div class="circle" style="margin-left: 1050px; margin-top: -200px;">
+                <p class="circle-text">
+                    Placement
+                    98%
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <br><br>
+    <div>
+        <a href="https://www.amazon.in/"><img src="amazon.png" class="icons" style="margin-left: 87px;"> </a>
+        <a href="https://www.microsoft.com/en-in"><img src="microsoft.png" class="icons" style="margin-left: 40px;"></a>
+        <a href="https://www.atherenergy.com/"><img src="ather.png" class="icons" style="margin-left: 40px;"></a>
+        <a href="https://www.amd.com/en.html"><img src="amd.png" class="icons" style="margin-left: 40px;"></a>
+        <a href="https://www.mastercard.co.in/en-in.html"><img src="master.png" class="icons" style="margin-left: 40px;"></a>
+        <a href="https://www.target.com/"><img src="target.png" class="icons" style="margin-left: 40px;"></a>
+    </div>
+    <br><br>
+    <img src="campus.png" class="image-place">
+    <br><br>
+    <div class="box3">
+        <p class="box3-text">
+            <b style="font-size: 35px;"><u>QuickLinks</u></b><br>
+            
+            <p class="box3-text1" style="margin-left: -140px; margin-top: 40px;">
+                <br><br>
+                <a href="https://erp.nitw.ac.in/erp/login" class="box3-text1">Smile ERP </a><br><br>
+                <a href="https://www.nitw.ac.in/page/?url=/contact-us" class="box3-text1">ContactUs </a><br><br>
+                <a href="https://www.nitw.ac.in/page/?url=/EMERGENCY/ECN/" class="box3-text1">Emergency </a><br><br>
+            </p>
+            <img src="maps.png" class="map">
+        </p>
+    </div>
+    <img src="nobg.png" style="width: 100%;">
+    <footer>
+        <br>
+        <center>Copyright © 2025 | Centre for Digital Infrastructure and Services (CDIS)</center>
+    </footer>
+</body>
+</html>
